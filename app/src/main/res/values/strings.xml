@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Stock Market Watch</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="searchText">Start searching your favourite Stocks !</string>
+    <string name="error_occured">Error occured</string>
+    <string name="watchListMsg">No Stocks WatchListed. Add some Stocks to WATCHLIST to see here</string>
+</resources>

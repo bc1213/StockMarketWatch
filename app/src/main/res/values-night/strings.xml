@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="searchText">Start searching your favourite Stocks !</string>
+    <string name="watchListMsg">No Stocks WatchListed. Add some Stocks to watchList to see here</string>
+</resources>

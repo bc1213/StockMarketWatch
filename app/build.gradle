@@ -1,0 +1,90 @@
+plugins {
+    id 'com.android.application'
+    id 'io.michaelrocks.paranoid'
+}
+
+android {
+    compileSdkVersion 30
+
+    defaultConfig {
+        applicationId "com.barclays.stockmarketwatch"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+        buildConfigField "String", "BASE_URL", "\"https://apidojo-yahoo-finance-v1.p.rapidapi.com/\""
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+def supportVersion = '29.0.0'
+
+def lifecycleExtensionVersion = '1.1.1'
+def butterknifeVersion = '10.1.0'
+def retrofitVersion = '2.7.0'
+def rxJavaVersion = '2.1.1'
+def daggerVersion = '2.14.1'
+def room_version = "2.2.5"
+
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.0.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+
+    //butterknife
+    implementation "com.jakewharton:butterknife:$butterknifeVersion"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$butterknifeVersion"
+
+    //retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation 'com.squareup.retrofit2:converter-gson:2.7.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.7.0'
+
+    //rxjava
+    implementation "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
+    implementation "io.reactivex.rxjava2:rxandroid:$rxJavaVersion"
+
+    //rxbinding 3
+    implementation 'com.jakewharton.rxbinding3:rxbinding:3.1.0'
+
+    //dagger
+    implementation "com.google.dagger:dagger:$daggerVersion"
+    implementation "com.google.dagger:dagger-android-support:$daggerVersion"
+    implementation "androidx.legacy:legacy-support-v4:1.0.0"
+    annotationProcessor "com.google.dagger:dagger-compiler:$daggerVersion"
+    annotationProcessor "com.google.dagger:dagger-android-processor:$daggerVersion"
+
+    //lifecycle
+    implementation "android.arch.lifecycle:extensions:$lifecycleExtensionVersion"
+    implementation "com.android.support:design:$supportVersion"
+
+    //MP Android chart: For showing graph
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
+    //Room database
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+
+    //fancy toast
+    implementation 'com.github.Shashank02051997:FancyToast-Android:0.1.8'
+}
